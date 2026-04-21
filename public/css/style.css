@@ -1,0 +1,151 @@
+body{
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container{
+    flex: 1;
+}
+
+/* index */
+.navbar{
+    height: 5rem;
+    background-color: white;
+}
+
+.fa-compass{
+    font-size: 2rem;
+    color:rgb(248, 67, 67);
+}
+
+.nav-link{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #222222 !important;
+}
+
+.f-info-links a {
+    text-decoration: none;
+    color:#222222;
+}
+
+.f-info-links a:hover{
+    text-decoration: underline;
+    color: #222222;
+}
+
+.f-info{
+    text-align: center;
+    height: 6rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+}
+
+.f-info-links,
+.f-info-socials,
+.f-info-brand{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.f-info-socials i{
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+
+/* Cards */
+.list-card{
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body {
+    padding: 0 !important;
+}
+
+.card-text p{
+    font-weight: 400 !important;
+}
+
+.list-link{
+    text-decoration: none;
+    color: #222222 !important;
+}
+
+.card-img-overlay{
+    opacity: 0;
+}
+
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: whitesmoke;
+}
+
+.add-btn{
+    background-color: rgb(252, 72, 72) !important;
+    border: none !important;
+}
+
+.edit-btn{
+    background-color: rgb(252, 72, 72) !important;
+    border: none !important;
+}
+
+/* show-page */
+.show-img{
+    height: 30vh;
+}
+
+.btns{
+    display: flex ;
+}
+
+.show-card{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Map */
+#map{
+    height: 380px;
+    width: 78vh;
+}
+
+#filters{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.filter{
+    display: grid;
+    text-align: center;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    opacity: 0.7;
+}
+
+.filter:hover{
+    opacity: 1;
+    cursor: pointer;
+    text-decoration: wavy;
+    color: #222222;
+}
+
+.filter p {
+    font-size: 0.85rem;
+}

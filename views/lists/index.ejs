@@ -1,0 +1,138 @@
+<% layout('/layouts/boilerplate.ejs') -%> 
+
+<!-- <h3> All Listings</h3> -->
+ <!-- <form method="get" action="lists/new">
+        <button type="submit">Create New Listing</button>
+    </form> -->
+<style>
+    .toggle{
+        border: solid black 1px;
+        border-radius: 1rem;
+        height: 3rem;
+        padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .tax{
+        display: none;
+    }
+
+    #filters a{
+        text-decoration: none;
+        color: black;
+        display: flex;
+    }
+</style>
+
+
+    <div id="filters">
+        <a href="/lists/category?category=Trending">
+        <div class="filter">
+            <div><i class="fa-solid fa-house-fire"></i></div>
+            <p>Trending</p>
+        </div>
+        </a>
+
+        <a href="/lists/category?category=Rooms">
+        <div class="filter">
+            <div><i class="fa-solid fa-hotel"></i></div>
+            <p>Rooms</p>
+        </div>
+        </a>
+
+        <a href="/lists/category?category=Iconic-Cities">
+        <div class="filter">
+            <div><i class="fa-solid fa-mountain-city"></i></div>
+            <p>Iconic-cities</p>
+        </div>
+        </a>
+
+        <a href="/lists/category?category=Mountains">
+        <div class="filter">
+            <div><i class="fa-solid fa-mountain"></i></div>
+            <p>Mountains</p>
+        </div>
+        </a>
+
+        <a href="/lists/category?category=Castles">
+        <div class="filter">
+            <div><i class="fa-brands fa-fort-awesome"></i></div>
+            <p>Castles</p>
+        </div>
+        </a>
+
+        <a href="/lists/category?category=Pools">
+        <div class="filter">
+            <div><i class="fa-solid fa-person-swimming"></i></div>
+            <p>Amazing Pools</p>
+        </div>
+        </a>
+
+        <a href="/lists/category?category=Camping">
+        <div class="filter">
+            <div><i class="fa-solid fa-tents"></i></div>
+            <p>Camping</p>
+        </div>
+        </a>
+
+        <a href="/lists/category?category=Farms">
+        <div class="filter">
+            <div><i class="fa-solid fa-building-wheat"></i></div>
+            <p>Farms</p>
+        </div>
+        </a>
+
+        <a href="/lists/category?category=Arctic">
+        <div class="filter">
+            <div><i class="fa-solid fa-snowflake"></i></div>
+            <p>Arctic</p>
+        </div>
+        </a>
+
+        <a href="/lists/category?category=Restaurants">
+        <div class="filter">
+            <div><i class="fa-solid fa-utensils"></i></div>
+            <p>Restaurants</p>
+        </div>
+        </a>
+        <div class="toggle ms-auto">
+            <div class="form-check form-switch form-check-reverse">
+                <input class="form-check-input" type="checkbox" id="switchCheckReverse">
+                <label class="form-check-label" for="switchCheckReverse">Display Total after Taxes</label>
+            </div>
+        </div>
+    </div>
+
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+    <% for(let list of allistings) { %>
+        <a href="/lists/<%= list._id%>"class="list-link">
+            <div class="card col list-card">
+                <img src="<%= list.image.url %>" class="card-img-top" alt="List_Image" style="height: 20rem;">
+                <div class="card-img-overlay"></div>
+                <div class="card-body">
+                    <p class="card-text">
+                        <b> <%= list.title %> </b> <br>
+                        &#8377; <%= list.price.toLocaleString("en-IN") %> /night
+                    </p>
+                </div>
+                <i class="tax"> +18% GST</i>
+            </div>
+        </a>
+    <% } %>
+</div>
+
+<script>
+    let taxSwitch = document.getElementById("switchCheckReverse");
+
+    taxSwitch.addEventListener("click", () => {
+        let taxElements = document.getElementsByClassName("tax");
+        for (let i = 0; i < taxElements.length; i++) {
+            taxElements[i].style.display = taxSwitch.checked ? "block" : "none";
+        }
+    });
+</script>
+
+
+
