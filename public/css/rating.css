@@ -249,3 +249,11 @@
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
+
+@media (max-width: 768px) {
+  .starability-result,
+  .starability-fade {
+    transform: scale(0.75);
+    transform-origin: left;
+  }
+}

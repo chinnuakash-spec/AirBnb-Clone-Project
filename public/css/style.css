@@ -149,3 +149,18 @@ body{
 .filter p {
     font-size: 0.85rem;
 }
+
+@media (max-width: 768px) {
+    #map{
+        width: auto;
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+  .edit-btn {
+    padding: 4px 8px;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+}
